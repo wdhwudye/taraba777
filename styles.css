@@ -1,0 +1,283 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #1a2a6c, #162955, #0f1c3d);
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 个人资料部分 */
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 30px;
+    background: linear-gradient(145deg, #1a2a6c, #162955);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0) 100%);
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+    color: #ff8c00;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5),
+                 0 0 20px rgba(255, 140, 0, 0.3),
+                 0 0 30px rgba(255, 140, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    line-height: 2;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subtitle br {
+    margin-bottom: 15px;
+    display: block;
+    content: "";
+}
+
+/* 成就部分 */
+.achievements {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-item {
+    background: linear-gradient(145deg, #1a2a6c, #162955);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0) 100%);
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.achievement-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ff8c00;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5),
+                 0 0 20px rgba(255, 140, 0, 0.3),
+                 0 0 30px rgba(255, 140, 0, 0.2);
+}
+
+.achievement-item p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* 按钮样式 */
+.line-button, .x-button {
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 35px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin: 10px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.line-button {
+    background: linear-gradient(145deg, #06C755, #05a54a);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
+}
+
+.x-button {
+    background: linear-gradient(145deg, #000000, #333333);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.line-button:hover, .x-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* CTA部分 */
+.cta-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 30px;
+    background: linear-gradient(145deg, #1a2a6c, #162955);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0) 100%);
+}
+
+.cta-section h2 {
+    color: #ff8c00;
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5),
+                 0 0 20px rgba(255, 140, 0, 0.3),
+                 0 0 30px rgba(255, 140, 0, 0.2);
+}
+
+.cta-section p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.button-group {
+    margin-top: 30px;
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #ffffff;
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer {
+    margin-top: 15px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    .avatar {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .line-button, .x-button {
+        padding: 14px 30px;
+        font-size: 15px;
+    }
+    
+    .subtitle {
+        font-size: 15px;
+        padding: 0 15px;
+    }
+    
+    .achievement-item {
+        padding: 20px;
+    }
+} 
